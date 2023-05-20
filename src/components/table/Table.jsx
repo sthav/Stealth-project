@@ -43,22 +43,23 @@ const Users = [
 
 
 
-const assignRandomLabel = () => {
-    const labels = ['label 1', 'label 2', 'label 3', 'label 4', 'label 5', 'label 6'];
-    return labels[Math.floor(Math.random() * labels.length)];
-};
+// const assignRandomLabel = () => {
+//     const labels = ['label 1', 'label 2', 'label 3', 'label 4', 'label 5', 'label 6'];
+//     return labels[Math.floor(Math.random() * labels.length)];
+// };
 
 
 
 
 
-const Table = ({labelName}) => {
-
+const Table = ({ labelName }) => {
+    const labels = ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'];
     let count = 0;
     const [list, setList] = useState(Users)
     const [masterChecked, setMasterChecked] = useState(false)
     const [selectedList, setSelectedList] = useState([])
     const [isChecked, setIsChecked] = useState(false);
+    const [date, setDate] = useState(null);
 
     const [fileData, setFileData] = useState([])
     //const selectedLabelId = props.labelId;
@@ -70,13 +71,20 @@ const Table = ({labelName}) => {
             // setCategoryList(data[""])
             // console.log(data[0]['Labels'].length );
             console.log("table");
-            console.log(data[0]);
+            console.log(data);
             console.log(labelName);
 
-            const filteredData = labelName
-            ? data.filter(item => item.Label === labelName)
-            : data;
-            setFileData(data)
+            for (let i = 0; i < data.length; i++) {
+                const randomLabel = labels[Math.floor(Math.random() * labels.length)];
+                data[i].label = randomLabel;
+              }
+
+            // const filteredData = labelName
+            //     ? data.filter(item => item.Label === labelName)
+            //     : data;
+
+                    setFileData(data);
+            
 
         } else {
             console.error("Error")
@@ -129,33 +137,58 @@ const Table = ({labelName}) => {
         const updatedList = fileData.filter(user => user.id !== id);
         setList(updatedList);
     }
-    
+
     const onItemCheck = (id) => {
-     setIsChecked(id);
-       if(id){
-        count++;
+        setIsChecked(id);
+        if (id) {
+            count++;
+            console.log(isChecked);
+            console.log(count);
+        }
+        if (!id)
+            count--;
         console.log(isChecked);
         console.log(count);
-       }
-       if(!id)
-       count--;
-       console.log(isChecked);
-       console.log(count);
-        };
+    };
 
-        const handleCheckboxChange = (checkboxId) => {
-            // setCheckboxes(prevCheckboxes =>
-            //   prevCheckboxes.map(checkbox =>
-            //     checkbox.id === checkboxId
-            //       ? { ...checkbox, checked: !checkbox.checked }
-            //       : checkbox
-            //   )
-            // );
-          };
+    const handleCheckboxChange = (checkboxId) => {
+        // setCheckboxes(prevCheckboxes =>
+        //   prevCheckboxes.map(checkbox =>
+        //     checkbox.id === checkboxId
+        //       ? { ...checkbox, checked: !checkbox.checked }
+        //       : checkbox
+        //   )
+        // );
+    };
+
+    //   const countCheckedItems = () => {
+    //     return checkboxes.filter(checkbox => checkbox.checked).length;
+    //   };
+
+    const modifyDateFormat = (dateString) => {
+        const options = { day: 'numeric', month: 'long', year: '2-digit' };
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = date.toLocaleDateString('en-US', { month: 'long' });
+        const year = date.getFullYear().toString().substr(-2);
         
-        //   const countCheckedItems = () => {
-        //     return checkboxes.filter(checkbox => checkbox.checked).length;
-        //   };
+        // Adding the appropriate suffix to the day
+        let daySuffix;
+        if (day === 1 || day === 21 || day === 31) {
+          daySuffix = 'st';
+        } else if (day === 2 || day === 22) {
+          daySuffix = 'nd';
+        } else if (day === 3 || day === 23) {
+          daySuffix = 'rd';
+        } else {
+          daySuffix = 'th';
+        }
+        
+        return `${day}${daySuffix} ${month} '${year}`;
+    };
+
+
+    const filteredData = labelName ? fileData.filter(item => item.label === labelName) : fileData;
 
     return (
 
@@ -182,8 +215,7 @@ const Table = ({labelName}) => {
                 </thead>
                 <tbody>
 
-                    if(label is slected ) ? 
-                    {fileData.map((Data) => (
+                    {filteredData.map((Data) => (
                         <tr key={Data.id} className={Data.selected ? "selected" : ""}>
                             <th scope="row">
                                 <input
@@ -192,15 +224,15 @@ const Table = ({labelName}) => {
                                     className="form-check-input"
                                     id="rowcheck{user.id}"
                                     onChange={() => handleCheckboxChange()}
-                    
+
                                 // onChange={(e) => onItemCheck(e, user)}
                                 />
                             </th>
-                            <td><img src={Data.file} alt='File' style={{ width: '40px', borderRadius: '100px' }} />{Data.Name}</td>
-                            <td><img src={Data.Owner} alt='File' style={{ width: '40px', borderRadius: '100px' }} /></td>
-                            <td>{assignRandomLabel()}</td>
+                            <td><img src={Data.file} alt='File' style={{ width: '30px', borderRadius: '100px' }} />{Data.Name}</td>
+                            <td><img src={Data.Owner} alt='File' style={{ width: '30px', borderRadius: '100px' }} /></td>
+                            <td>{Data.label}</td>
                             <td>{Data.Type}</td>
-                            <td>{Data.ModifietAt}</td>
+                            <td>{modifyDateFormat(Data.ModifietAt)}</td>
 
                             <td className='actionButtons'>
                                 <button className='editButton'>
@@ -220,27 +252,13 @@ const Table = ({labelName}) => {
                                     <div className='popUpBody'>
                                         <div>Are you sure</div>
                                         <button className='cancel'>X</button>
-                                         <button className='confirmDelete' onClick={() => { handleDelete(Data.id) }}>Y</button>
+                                        <button className='confirmDelete' onClick={() => { handleDelete(Data.id) }}>Y</button>
                                     </div>
                                 </Popup></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            {/* <button
-                        className="btn btn-primary"
-                        onClick={() => getSelectedRows()}
-                    >
-                        Get Selected Items {selectedList.length}
-                    </button> */}
-            {/* <div className="row">
-                        <b>All Row Items:</b>
-                        <code>{JSON.stringify(list)}</code>
-                    </div>
-                    <div className="row">
-                        <b>Selected Row Items(Click Button To Get):</b>
-                        <code>{JSON.stringify(selectedList)}</code>
-                    </div> */}
         </div>
     )
 }

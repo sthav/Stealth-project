@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './categories.css'
 import Table from '../table/Table';
+import settings from '../../assets/settings.png'
 const Categories = () => {
 
 
@@ -57,23 +58,27 @@ const Categories = () => {
 
     const [selectedLabels, setSelectedLabels] = useState([]);
 
-    const handleLabelToggle = (id) => {
-        setLabelName(id)
-        console.log(id);
-        // if (selectedLabels.includes(labelId)) {
-        //     setSelectedLabels(selectedLabels.filter((id) => id !== labelId));
-        //     console.log(true);
-        //     console.log(id);
-        // } else {
-        //     setSelectedLabels([...selectedLabels, labelId]);
-        //     console.log(false);
-        // }
+    const handleLabelToggle = (_id) => {
+        setLabelName(_id)
+        console.log(_id);
+        if (selectedLabels.includes(_id)) {
+            setSelectedLabels(selectedLabels.filter((id) => id !== _id));
+            //console.log(true);
+            //console.log(id);
+        } else {
+            setSelectedLabels([...selectedLabels, _id]);
+            //console.log(false);
+        }
     };
 
 
     return (
         <div className='mainCategoriesContainer'>
             <div className='categoryC'>
+            <div className='categoryHeading'>
+                    CATEGORIES
+                    <img className='settings' src={settings} alt='settings'/>
+                </div>
             {categoryList.map((category) => (
                 <div key={category.id}>
                     <h3>{category.Name}</h3>
@@ -98,7 +103,7 @@ const Categories = () => {
            
             </div>
             <div className='tableContainer'>
-                <div className='tableTitle'>All items</div>
+                <h6 className='tableTitle'>All items</h6>
                  <Table labelName={labelName}/>
             </div>
         </div>

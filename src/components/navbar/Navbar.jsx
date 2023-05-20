@@ -24,19 +24,19 @@ const Navbar = () => {
     }
   };
 
-  // const handleUpload = () => {
-  //   const fileInput = document.createElement('input');
-  //   fileInput.type = 'file';
-  //   fileInput.accept = 'image/*'; // Specify the accepted file types if needed
+  const handleUpload = () => {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*'; // Specify the accepted file types if needed
 
-  //   fileInput.addEventListener('change', () => {
-  //     const selectedFile = fileInput.files[0];
-  //     // Handle the selected file here (e.g., upload it to the server)
-  //     console.log('Selected file:', selectedFile);
-  //   });
+    fileInput.addEventListener('change', () => {
+      const selectedFile = fileInput.files[0];
+      // Handle the selected file here (e.g., upload it to the server)
+      console.log('Selected file:', selectedFile);
+    });
 
-  //   fileInput.click();
-  // }
+    fileInput.click();
+  }
 
   useEffect(() => {
     handleResize();
@@ -73,9 +73,9 @@ const Navbar = () => {
       <div className='sideHeadingContainer'>
         <p> File Manager</p>
       </div>
-      <button className='uploadButton' >
+      <button className='uploadButton' onClick={handleUpload}>
         <img className='plus' src={plus} alt="plus" />
-        Upload </button>
+        Upload</button>
     </div>
 
   )

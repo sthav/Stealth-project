@@ -20,15 +20,10 @@ const MainPage = () => {
         <div className='rightContainer'>
         <Navbar/>
         <div className='mainContainer'>
-            <div className='categoryContainer'>
-                <div className='categoryHeading'>
-                    CATEGORIES
-                    <img className='settings' src={settings} alt='settings'/>
-                </div>
                 <div className='categories'>
                     <Categories items={items}/>
                 </div>
-            </div>
+
         </div>
         </div>
     </div>

@@ -7,12 +7,28 @@ ul {
 }
 .categoryC{
  width: 200px;
+ margin-top: 97px;
+ margin-left: 40px;
 }
 .mainCategoriesContainer{
 display: flex;
 flex-direction: row;
 }
-.tableContainer{
+/* .tableContainer{
  display: flex;
 flex-direction: column;
+border: solid 1px black;
+} */
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 1002px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(99,99,99, 0.2);
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+    margin-top:97px;
+    margin-right: 141px;
+    /* margin-left: 80px; */
 }
