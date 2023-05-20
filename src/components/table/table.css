@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
+table{
+    height: 288px;
+    width: 977px;
+    border-radius: 8px;
+    border-spacing: 0;
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+    margin-top: 39px;
+    margin-left: 25px;
+    margin-bottom: 43px;
+    padding-right: 41px;
+}
+th{
+    margin-left: 26px;
+    opacity: 1;
+    color: rgba(87,102,148,1);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.51px;
+    text-align: left;
+    line-height: 24px;
+    text-transform: uppercase;
+    justify-content: center;
+   
+}
+.headings{
+    border-bottom: 1px solid RGB(28, 30, 46);
+    padding-bottom: 12px;
+}
+
+.checkboxes{
+    border-radius: 2px;
+    border: 2px solid rgba(169,181,218, 1);
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+}
+input[type="checkbox"]{
+    border-radius: 2px;
+    border: 2px solid rgba(169,181,218, 1);
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+}
+td{
+    opacity: 1;
+    color: rgba(124,141,193,1);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.46px;
+    text-align: left;
+    border-bottom: 1px solid RGB(169, 181, 218);
+}
+.actionButtons{
+    width: 84px;
+}
+.deleteButton{
+    background-color: RGB(255, 255, 255);
+    border: none;
+    margin-left: 12px;
+}
+.delete{
+    width: 24px;
+    height: 24px;
+}
+.deleteButton2{
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.editButton{
+    background-color: RGB(255, 255, 255);
+    border: none;
+}
+.edit{
+    width: 24px;
+    height: 24px;
+}
+.popUpHeader{
+    background-color:RGB(247, 248, 250);
+    width: 100%;
+    opacity: 1;
+    color: rgba(87,102,148,1);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.51px;
+    text-align: left;
+    line-height: 24px;
+    justify-content: center;
+}
+.popUpBody{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    opacity: 1;
+    color: RGB(186, 186, 204);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.51px;
+    text-align: left;
+    line-height: 24px;
+    justify-content: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.cancel{
+    margin-left: 58px;
+    border-radius: 100px;
+    border: none;
+    background-color: RGB(244, 63, 94);
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+}
+.confirmDelete{
+    margin-left: 4px;
+    border-radius: 100px;
+    border: none;
+    background-color: RGB(50, 195, 146);
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+}

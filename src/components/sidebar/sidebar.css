@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700&display=swap');
+.sidebarContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(99,99,99, 0.2);
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+  }
+  
+  .logoContainer{
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    color: rgba(23,43,78,1);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.18px;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .logo{
+    width:44px;
+    height:44px;
+    margin-right: 7px;
+  }
+
+  .fileManagerButton{
+    width: 198px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 14px;
+    border-radius: 4px;
+    opacity: 1;
+    background-color: rgba(240,243,252, 1);
+    opacity: 1;
+    color: rgba(39,47,72,1);
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.46px;
+    text-align: left;
+    align-items: center;
+    border: none;
+
+  }
+  .line{
+    margin-top: 27px;
+    width: 198px;
+    border: 0.8px solid rgba(220,224,227, 1);
+    opacity: 1;
+  }
+  .fmLogo{
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+    margin-right: 8px;
+  }
