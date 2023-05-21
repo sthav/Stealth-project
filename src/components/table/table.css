@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&display=swap');
-table{
+
+table {
     height: 288px;
     width: 977px;
     border-radius: 8px;
     border-spacing: 0;
     opacity: 1;
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255, 255, 255, 1);
     /* margin-left: 25px; */
     margin-bottom: 43px;
     padding-right: 41px;
 }
-th{
+
+th {
     margin-left: 26px;
     opacity: 1;
-    color: rgba(87,102,148,1);
+    color: rgba(87, 102, 148, 1);
     font-family: 'Nunito Sans', sans-serif;
     font-size: 13px;
     font-weight: 800;
@@ -23,28 +25,31 @@ th{
     line-height: 24px;
     text-transform: uppercase;
     justify-content: center;
-   
+
 }
-.headings{
+
+.headings {
     border-bottom: 1px solid RGB(28, 30, 46);
     padding-bottom: 12px;
 }
 
-.checkboxes{
+.checkboxes {
     border-radius: 2px;
-    border: 2px solid rgba(169,181,218, 1);
+    border: 2px solid rgba(169, 181, 218, 1);
     opacity: 1;
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255, 255, 255, 1);
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     border-radius: 2px;
-    border: 2px solid rgba(169,181,218, 1);
+    border: 2px solid rgba(169, 181, 218, 1);
     opacity: 1;
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255, 255, 255, 1);
 }
-td{
+
+td {
     opacity: 1;
-    color: rgba(124,141,193,1);
+    color: rgba(124, 141, 193, 1);
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -53,37 +58,44 @@ td{
     text-align: left;
     border-bottom: 1px solid RGB(169, 181, 218);
 }
-.actionButtons{
+
+.actionButtons {
     width: 84px;
 }
-.deleteButton{
+
+.deleteButton {
     background-color: RGB(255, 255, 255);
     border: none;
     margin-left: 12px;
 }
-.delete{
+
+.delete {
     width: 24px;
     height: 24px;
 }
-.deleteButton2{
+
+.deleteButton2 {
     width: 16px;
     height: 16px;
     margin-left: 8px;
     margin-right: 8px;
 }
-.editButton{
+
+.editButton {
     background-color: RGB(255, 255, 255);
     border: none;
 }
-.edit{
+
+.edit {
     width: 24px;
     height: 24px;
 }
-.popUpHeader{
-    background-color:RGB(247, 248, 250);
+
+.popUpHeader {
+    background-color: RGB(247, 248, 250);
     width: 100%;
     opacity: 1;
-    color: rgba(87,102,148,1);
+    color: rgba(87, 102, 148, 1);
     font-family: 'Nunito Sans', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -93,7 +105,8 @@ td{
     line-height: 24px;
     justify-content: center;
 }
-.popUpBody{
+
+.popUpBody {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -110,7 +123,8 @@ td{
     margin-top: 6px;
     margin-bottom: 6px;
 }
-.cancel{
+
+.cancel {
     margin-left: 58px;
     border-radius: 100px;
     border: none;
@@ -121,7 +135,8 @@ td{
     font-weight: 700;
     font-style: normal;
 }
-.confirmDelete{
+
+.confirmDelete {
     margin-left: 4px;
     border-radius: 100px;
     border: none;

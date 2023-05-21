@@ -110,7 +110,7 @@ const Table = ({ labelName }) => {
                                     id="rowcheck{user.id}"
                                 />
                             </th>
-                            <td><img src={Data.file} alt='File' style={{ width: '30px', borderRadius: '100px' }} />{Data.Name}</td>
+                            <td><img src={Data.file} alt='File' style={{ width: '30px', borderRadius: '100px', marginRight: '12px' }} />{Data.Name}</td>
                             <td><img src={Data.Owner} alt='File' style={{ width: '30px', borderRadius: '100px' }} /></td>
                             <td>{Data.label}</td>
                             <td>{Data.Type}</td>
